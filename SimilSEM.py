@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageEnhance
 import random
 from math import pi, sin, cos
 
-def create_EP_texture(im_size = (5000,3500), resolution = 5, grain_size = (0.5,5), grain_color = (150,155), grain_density = 4):
+def create_Si_texture(im_size = (5000,3500), resolution = 5, grain_size = (0.5,5), grain_color = (150,155), grain_density = 4):
     # im_size       = image size in pixels
     # resolution    = image resolution in pixel/um
     # grain_size    = min/max grain size in um
@@ -49,8 +49,8 @@ def create_EP_texture(im_size = (5000,3500), resolution = 5, grain_size = (0.5,5
         
     return image.filter(ImageFilter.GaussianBlur(resolution*grain_density))
 
-#im = create_EP_texture(grain_size = (0.1,1), grain_color = (100,110), grain_density = 1)
-im = create_EP_texture()
+#im = create_Si_texture(grain_size = (0.1,1), grain_color = (100,110), grain_density = 1)
+im = create_Si_texture()
 im.show()
 
 bright = ImageEnhance.Brightness(im)
